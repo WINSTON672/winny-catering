@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winny's Catering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Serif SC', serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #5e3b3b;
+    }
+    header {
+      background: #de6581 url('https://images.unsplash.com/photo-1602169551840-e04ac2b6f30d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    nav {
+      background-color: #f8dbe2;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      font-weight: bold;
+    }
+    nav a {
+      text-decoration: none;
+      color: #5e3b3b;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #f8dbe2;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Winny's Catering</h1>
+    <p>Ancient Cuisine, Modern Flavors · Traditional Elegance, Modern Taste</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#culture">Culture</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="section" id="services">
+    <div class="card">
+      <h2>Our Services</h2>
+      <p>We offer premium ancient-style banquet services, wedding catering, custom private menus, and holiday celebration feasts. Winny's Catering merges traditional Chinese royal flavors with modern culinary artistry.</p>
+    </div>
+
+    <div class="card" id="culture">
+      <h2>Cultural Inspiration</h2>
+      <p>Our menu draws inspiration from the dining traditions of ancient Chinese beauties and Japanese floral art. We combine Tang and Song dynasty cuisine, Ming and Qing dynasty pastries, and Japanese wagashi to create a feast for both the eyes and the palate.</p>
+    </div>
+
+    <div class="card" id="gallery">
+      <h2>Culinary Gallery</h2>
+      <div class="gallery">
+        <img src="https://cdn.pixabay.com/photo/2018/01/19/08/43/chinese-food-3095853_960_720.jpg" alt="Chinese feast">
+        <img src="https://cdn.pixabay.com/photo/2022/04/02/13/28/geisha-7106926_960_720.jpg" alt="Ancient beauty">
+        <img src="https://cdn.pixabay.com/photo/2019/05/20/07/37/food-4216359_960_720.jpg" alt="Plated dessert">
+        <img src="https://cdn.pixabay.com/photo/2020/01/12/14/32/japanese-4758992_960_720.jpg" alt="Japanese cherry blossoms">
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 Winny's Catering. Inspired by the grace of ancient beauties and cherry blossoms in bloom.</p>
+  </footer>
+</body>
+</html>
