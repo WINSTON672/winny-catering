@@ -4,116 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Winny's Catering</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Noto Serif SC', serif;
-      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
-      color: #5e3b3b;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff5e6;
+      color: #333;
     }
     header {
-      background: #de6581 url('https://images.unsplash.com/photo-1602169551840-e04ac2b6f30d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      color: white;
-      padding: 4rem 2rem;
+      background-color: #ffbb66;
+      padding: 1em;
       text-align: center;
-    }
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      margin-bottom: 0.5rem;
-    }
-    header h1 a {
-      color: white;
-      text-decoration: none;
-    }
-    header h1 a:hover {
-      text-decoration: underline;
-    }
-    header p {
-      font-size: 2.2rem;
-    }
-    nav {
-      background-color: #f8dbe2;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
+      font-size: 2em;
       font-weight: bold;
     }
-    nav a {
-      text-decoration: none;
-      color: #5e3b3b;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1000px;
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
       margin: auto;
+      overflow: hidden;
+      border-radius: 20px;
     }
-    .card {
-      background: linear-gradient(to bottom right, #fff9e6, #ffeec2);
-      border: 3px solid gold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease;
+    .slide {
+      display: none;
+      width: 100%;
     }
-    .card:hover {
-      transform: scale(1.02);
-    }
-    .business-card {
-      background: black;
-      color: white;
-    }
-    .card img {
-      width: 300px;
+    .slide img {
+      width: 100%;
       height: auto;
-      border-radius: 10px;
-      margin-top: 1rem;
     }
-    footer {
-      background: #f8dbe2;
+    .active {
+      display: block;
+    }
+    .content {
+      padding: 2em;
       text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
+    }
+    .content h2 {
+      color: #ff7f50;
+    }
+    .footer {
+      text-align: center;
+      padding: 1em;
+      background-color: #ffbb66;
+      margin-top: 3em;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1><a href="index.html">Winny's Catering</a></h1>
-    <p>Ancient Cuisine, Modern Flavors · Traditional Elegance, Modern Taste</p>
+    Winny's Catering
   </header>
 
-  <nav>
-    <a href="services.html">Services</a>
-    <a href="culture.html">Culture</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
-  <section class="section">
-    <div class="card">
-      <h2>Welcome</h2>
-      <p>This is the homepage of Winny's Catering. Here you'll find our story, values, and highlights of our brand. Dive into the experience of fine Chinese cultural dining with a modern twist.</p>
+  <div class="slideshow-container">
+    <div class="slide active">
+      <img src="images/IMG_0483.png" alt="Slideshow Image 1" />
     </div>
-
-    <div class="card business-card">
-      <h2>Business Card</h2>
-      <p><strong>Winston Lin</strong><br>
-      Founder<br>
-      Email: linzaiwinston413@gmail.com<br>
-      Phone: (608) 895-2077</p>
-      <img src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/ddcd6692d48882b857e7ddc919e0412d.jpeg" alt="Winny Catering Business Card">
+    <div class="slide">
+      <img src="images/IMG_0484.png" alt="Slideshow Image 2" />
     </div>
-  </section>
+    <div class="slide">
+      <img src="images/IMG_0485.png" alt="Slideshow Image 3" />
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
 
-  <footer>
-    <p>© 2025 Winny's Catering. Inspired by the grace of ancient beauties and cherry blossoms in bloom.</p>
-  </footer>
+  <div class="content">
+    <h2>About Winny's Catering</h2>
+    <p>
+      We create unforgettable food experiences for special events. From birthdays to Sweet Sixteens, Winny’s Catering brings elegance, flavor, and style to your celebration.
+    </p>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Winny's Catering. All rights reserved.
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 3000); // Change every 3 seconds
+  </script>
 </body>
 </html>
