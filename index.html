@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Winny's Catering</title>
+  <title>Winny Catering</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Dancing Script', sans-serif;
-      background: #fffaf0;
+      font-family: 'Dancing Script', cursive;
+      background: #f0f8ff;
       color: #333;
     }
     header {
@@ -17,41 +17,100 @@
       padding: 1em;
       text-align: center;
       font-size: 2.5em;
-      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      color: white;
+    }
+    nav {
+      background-color: #1ec8ff;
+      display: flex;
+      justify-content: center;
+      gap: 1.5em;
+      padding: 0.5em;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.2em;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .slideshow {
       position: relative;
       max-width: 100%;
       margin: auto;
+      overflow: hidden;
     }
     .slides {
       display: none;
       width: 100%;
       height: auto;
+      transition: transform 1s ease-in-out;
+      transform-origin: center;
+    }
+    .slides.active {
+      display: block;
+      animation: rotateIn 1s ease-in-out;
+    }
+    @keyframes rotateIn {
+      from {
+        transform: rotateY(90deg);
+        opacity: 0;
+      }
+      to {
+        transform: rotateY(0);
+        opacity: 1;
+      }
     }
     .info {
       padding: 2em;
       text-align: center;
     }
-    .info h2 {
-      color: #1ec8ff;
-      font-family: 'Dancing Script', cursive;
-      font-size: 2em;
+    .card {
+      background: #fffaf0;
+      border: 2px solid #1ec8ff;
+      border-radius: 10px;
+      margin: 2em auto;
+      padding: 1.5em;
+      width: 80%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .contact-pic {
+      width: 150px;
+      border-radius: 10px;
+      margin-top: 1em;
     }
   </style>
 </head>
 <body>
   <header>Winny Catering</header>
-
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Menu</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
   <div class="slideshow">
     <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0497.jpeg" />
-    <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0498.jpeg" />
+    <img class="slides" style="max-height: 300px; object-fit: cover;" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0498.jpeg" />
     <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0499.jpeg" />
   </div>
 
   <div class="info">
     <h2>About Winny Catering</h2>
-    <p>We offer custom catering for sweet sixteen events, parties, and more! Book now to bring style and flavor to your next celebration.</p>
+    <p>We offer custom catering for sweet sixteen events, parties, and more! Book now to bring style and flavor to your next celebration. From elegant appetizers to unforgettable desserts, we craft every dish with creativity and care to make your special moments even sweeter. Whether you're hosting a lavish event or an intimate gathering, Winny Catering delivers charm, class, and culinary delight that will leave your guests raving. With our personalized touch and passion for excellence, your event is sure to shine!</p>
+  </div>
+
+  <div class="card">
+    <h3>Business Card</h3>
+    <p><strong>Winston Lin</strong><br>
+    Founder<br>
+    Email: <a href="mailto:linzaiwinston413@gmail.com">linzaiwinston413@gmail.com</a><br>
+    Phone: <a href="tel:+16088952077">(608) 895-2077</a></p>
+    <img class="contact-pic" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0480.jpeg" alt="Winston Lin" />
   </div>
 
   <script>
@@ -59,13 +118,13 @@
     const showSlides = () => {
       const slides = document.getElementsByClassName("slides");
       for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+        slides[i].classList.remove("active");
       }
       slideIndex++;
       if (slideIndex > slides.length) {
         slideIndex = 1;
       }
-      slides[slideIndex - 1].style.display = "block";
+      slides[slideIndex - 1].classList.add("active");
       setTimeout(showSlides, 3000);
     };
     showSlides();
