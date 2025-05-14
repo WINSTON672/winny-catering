@@ -3,102 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Winny's Catering</title>
+  <title>Winny Catering</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff5e6;
+      font-family: Arial, sans-serif;
+      background: #fffaf0;
       color: #333;
     }
     header {
-      background-color: #ffbb66;
+      background-color: #f8b195;
       padding: 1em;
       text-align: center;
       font-size: 2em;
       font-weight: bold;
     }
-    .slideshow-container {
+    .slideshow {
       position: relative;
       max-width: 100%;
       margin: auto;
-      overflow: hidden;
-      border-radius: 20px;
     }
-    .slide {
+    .slides {
       display: none;
-      width: 100%;
-    }
-    .slide img {
       width: 100%;
       height: auto;
     }
-    .active {
-      display: block;
-    }
-    .content {
+    .info {
       padding: 2em;
       text-align: center;
-    }
-    .content h2 {
-      color: #ff7f50;
-    }
-    .footer {
-      text-align: center;
-      padding: 1em;
-      background-color: #ffbb66;
-      margin-top: 3em;
     }
   </style>
 </head>
 <body>
-  <header>
-    Winny's Catering
-  </header>
+  <header>Winny Catering</header>
 
-  <div class="slideshow-container">
-    <div class="slide active">
-      <img src="images/IMG_0483.png" alt="Slideshow Image 1" />
-    </div>
-    <div class="slide">
-      <img src="images/IMG_0484.png" alt="Slideshow Image 2" />
-    </div>
-    <div class="slide">
-      <img src="images/IMG_0485.png" alt="Slideshow Image 3" />
-    </div>
-    <!-- Add more slides as needed -->
+  <div class="slideshow">
+    <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0497.jpeg" />
+    <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0498.jpeg" />
+    <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0499.jpeg" />
   </div>
 
-  <div class="content">
-    <h2>About Winny's Catering</h2>
-    <p>
-      We create unforgettable food experiences for special events. From birthdays to Sweet Sixteens, Winny’s Catering brings elegance, flavor, and style to your celebration.
-    </p>
-  </div>
-
-  <div class="footer">
-    &copy; 2025 Winny's Catering. All rights reserved.
+  <div class="info">
+    <h2>About Winny Catering</h2>
+    <p>We offer custom catering for sweet sixteen events, parties, and more! Book now to bring style and flavor to your next celebration.</p>
   </div>
 
   <script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === index) {
-          slide.classList.add('active');
-        }
-      });
-    }
-
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }
-
-    setInterval(nextSlide, 3000); // Change every 3 seconds
+    let slideIndex = 0;
+    const showSlides = () => {
+      const slides = document.getElementsByClassName("slides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    };
+    showSlides();
   </script>
 </body>
 </html>
