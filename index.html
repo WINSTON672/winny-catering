@@ -45,6 +45,8 @@
       display: none;
       width: 100%;
       height: auto;
+      max-height: 300px;
+      object-fit: contain;
       transition: transform 1s ease-in-out;
       transform-origin: center;
     }
@@ -65,6 +67,10 @@
     .info {
       padding: 2em;
       text-align: center;
+      border: 2px solid #1ec8ff;
+      border-radius: 10px;
+      margin: 2em;
+      background-color: #fff;
     }
     .card {
       background: #fffaf0;
@@ -79,7 +85,9 @@
       margin-top: 0;
     }
     .contact-pic {
-      width: 150px;
+      width: 100%;
+      max-width: 150px;
+      height: auto;
       border-radius: 10px;
       margin-top: 1em;
     }
@@ -95,7 +103,7 @@
   </nav>
   <div class="slideshow">
     <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0497.jpeg" />
-    <img class="slides" style="max-height: 300px; object-fit: cover;" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0498.jpeg" />
+    <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0498.jpeg" />
     <img class="slides" src="https://raw.githubusercontent.com/WINSTON672/winny-catering/main/IMG_0499.jpeg" />
   </div>
 
